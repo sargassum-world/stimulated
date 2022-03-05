@@ -5,3 +5,4 @@ export { default as NavigationLinkController } from './navigation-link.controlle
 export { default as NavigationMenuController } from './navigation-menu.controller';
 export * as ThemeToggle from './theme-toggle';
 export { default as ThemeController } from './theme.controller';
+export { default as TurboCacheController } from './turbo-cache.controller';
