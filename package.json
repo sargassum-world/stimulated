@@ -1,6 +1,6 @@
 {
   "name": "@sargassum-world/stimulated",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "homepage": "https://github.com/sargassum-world/stimulated",
   "author": "Ethan Li <lietk12@gmail.com> (https://ethanj.li)",
   "description": "Reusable modest JS sprinkles & controllers for web apps",
@@ -34,6 +34,7 @@
     "async-mutex": "^0.3.2",
     "stimulus": "2.0.0"
   },
+  "main": "src/index.js",
   "files": [
     "**/*.js",
     "LICENSE",
