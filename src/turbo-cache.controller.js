@@ -1,4 +1,4 @@
-import * as Turbo from '@hotwired/turbo/core';
+import * as Turbo from '@hotwired/turbo';
 import { Controller } from 'stimulus';
 
 export default class extends Controller {
