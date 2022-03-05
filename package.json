@@ -1,0 +1,43 @@
+{
+  "name": "@sargassum-world/stimulated",
+  "version": "0.1.0",
+  "homepage": "https://github.com/sargassum-world/stimulated",
+  "author": "Ethan Li <lietk12@gmail.com> (https://ethanj.li)",
+  "description": "Reusable modest JS sprinkles & controllers for web apps",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sargassum-world/stimulated.git"
+  },
+  "license": "Apache-2.0",
+  "keywords": [
+    "modest",
+    "modest-js",
+    "hotwired",
+    "stimulus"
+  ],
+  "bugs": {
+    "url": "https://github.com/sargassum-world/stimulated/issues"
+  },
+  "scripts": {
+    "format": "prettier --write ./src/**/*.{js,html}",
+    "lint": "prettier --write ./src/**/*.{js,html} && eslint src/**/*.js",
+    "lint:fix": "prettier --write ./src/**/*.{js,html} && eslint --fix src/**/*.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "eslint": "^8.10.0",
+    "eslint-plugin-import": "^2.24.2",
+    "prettier": "^2.4.1"
+  },
+  "dependencies": {
+    "@hotwired/turbo": "^7.0.1",
+    "async-mutex": "^0.3.2",
+    "stimulus": "2.0.0"
+  },
+  "files": [
+    "**/*.js",
+    "LICENSE",
+    "LICENSE.BlueOak",
+    "README.md"
+  ]
+}
