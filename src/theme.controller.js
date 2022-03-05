@@ -5,7 +5,7 @@ import {
   loadThemeSetting,
   storeThemeSetting,
   setTheme,
-} from './theme-toggle';
+} from './util/theme-toggle';
 
 export default class extends Controller {
   connect() {
