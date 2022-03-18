@@ -1,6 +1,8 @@
 import * as Turbo from '@hotwired/turbo';
 import { Controller } from 'stimulus';
 
+export { Turbo };
+
 export default class extends Controller {
   clear(e) {
     // This assumes the controller is attached to a form!

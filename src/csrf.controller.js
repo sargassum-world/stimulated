@@ -36,7 +36,11 @@ export default class extends Controller {
     }
 
     await fetchMutex.runExclusive(async () => {
-      const response = await fetch(this.routeTarget.value);
+      const response = await fetch(this.routeTarget.value, {
+        headers: {
+          Accept: 'application/json',
+        },
+      });
       const responseBody = await response.json();
       csrfToken = responseBody.token;
       this.setToken();
