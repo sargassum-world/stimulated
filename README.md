@@ -3,10 +3,9 @@ Reusable modest JS sprinkles & controllers for web apps
 
 ## Usage
 
-Make a main script which imports and registers your various controllers, e.g.:
+Make a main script which imports and registers any controllers and custom elements you want to use from this package, e.g.:
 ```js
 
-import * as Turbo from '@hotwired/turbo';
 import {
 	CSRFController,
 	DefaultScrollableController,
@@ -14,11 +13,15 @@ import {
 	NavigationLinkController,
 	NavigationMenuController,
 	ThemeController,
+	TurboCableStreamSourceElement,
 	TurboCacheController,
+	Turbo,
 } from '@sargassum-world/stimulated';
 import { Application } from 'stimulus';
 
 Turbo.session.drive = true;
+
+customElements.define('turbo-cable-stream-source', TurboCableStreamSourceElement)
 
 const Stimulus = Application.start();
 Stimulus.register('csrf', CSRFController);
