@@ -42,12 +42,6 @@ export default class extends Controller {
     const container = getScrollParent(this.element.parentElement);
     const position =
       this.element.offsetTop - this.element.getBoundingClientRect().height;
-    console.log(
-      container,
-      this.element.offsetTop,
-      this.element.getBoundingClientRect().height,
-      position,
-    );
     container.scrollTo({ top: position, behavior: 'smooth' });
   }
 }

@@ -1,6 +1,7 @@
 export { default as CSRFController } from './csrf.controller';
 export { default as DefaultScrollableController } from './default-scrollable.controller';
 export { default as FormSubmissionController } from './form-submission.controller';
+export { default as HideableController } from './hideable.controller';
 export { default as LoadFocusController } from './load-focus.controller';
 export { default as LoadScrollController } from './load-scroll.controller';
 export { default as NavigationLinkController } from './navigation-link.controller';
