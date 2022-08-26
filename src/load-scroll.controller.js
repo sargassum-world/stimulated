@@ -1,4 +1,4 @@
-import { Controller } from 'stimulus';
+import { Controller } from '@hotwired/stimulus';
 
 // Copied from https://stackoverflow.com/a/49186677
 export const getScrollParent = (node) => {

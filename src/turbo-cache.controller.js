@@ -1,5 +1,5 @@
 import { Turbo } from './turbo';
-import { Controller } from 'stimulus';
+import { Controller } from '@hotwired/stimulus';
 
 export default class extends Controller {
   clear(e) {
