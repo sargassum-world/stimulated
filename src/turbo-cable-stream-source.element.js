@@ -3,13 +3,11 @@ import { connectStreamSource, disconnectStreamSource } from '@hotwired/turbo';
 import { createConsumer, logger } from '@rails/actioncable';
 import { csrfToken, setCSRFToken, fetchCSRFToken } from './csrf';
 
-import { Turbo } from './turbo.js';
-
 let consumer;
 
-function getConsumer() {
+function getConsumer(url) {
   if (consumer === undefined) {
-    consumer = createConsumer();
+    consumer = createConsumer(url === null ? undefined : url);
   }
   return consumer;
 }
@@ -33,7 +31,9 @@ export default class TurboCableStreamSourceElement extends HTMLElement {
     if (this.hasAttribute('csrf-token')) {
       channel.csrfToken = this.getAttribute('csrf-token');
     }
-    this.subscription = getConsumer().subscriptions.create(channel, {
+    this.subscription = getConsumer(
+      this.getAttribute('cable-route'),
+    ).subscriptions.create(channel, {
       received: this.dispatchMessageEvent.bind(this),
     });
     if (this.hasAttribute('logging')) {

@@ -34,7 +34,7 @@ export default class extends Controller {
     this.element.focus();
     this.clearTimeout = setRandomInterval(
       () => {
-        this.element.src = src + "?_time=" + Date.now();
+        this.element.src = src + '?_time=' + Date.now();
       },
       this.minIntervalValue * 1000,
       this.maxIntervalValue * 1000,
