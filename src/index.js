@@ -1,3 +1,4 @@
+export { getCSRFToken, setCSRFToken, fetchCSRFToken } from './csrf';
 export { default as CSRFController } from './csrf.controller';
 export { default as DefaultScrollableController } from './default-scrollable.controller';
 export { default as FormSubmissionController } from './form-submission.controller';

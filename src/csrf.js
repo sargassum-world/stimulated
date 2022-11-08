@@ -6,6 +6,10 @@ import { Mutex } from 'async-mutex';
 export let csrfToken = null;
 let fetchMutex = new Mutex();
 
+export function getCSRFToken() {
+  return csrfToken;
+}
+
 export function setCSRFToken(token) {
   csrfToken = token;
 }

@@ -1,7 +1,7 @@
 // This is adapted from the MIT-licensed library @hotwired/turbo-rails.
 import { connectStreamSource, disconnectStreamSource } from '@hotwired/turbo';
 import { createConsumer, logger } from '@rails/actioncable';
-import { csrfToken, setCSRFToken, fetchCSRFToken } from './csrf';
+import { getCSRFToken, setCSRFToken, fetchCSRFToken } from './csrf';
 
 let consumer;
 
@@ -59,10 +59,10 @@ export default class TurboCableStreamSourceElement extends HTMLElement {
   }
 
   setCSRFToken() {
-    if (csrfToken === null) {
+    if (getCSRFToken() === null) {
       return false;
     }
-    this.setAttribute('csrf-token', csrfToken);
+    this.setAttribute('csrf-token', getCSRFToken());
     return this.hasValidCSRFToken();
   }
 
