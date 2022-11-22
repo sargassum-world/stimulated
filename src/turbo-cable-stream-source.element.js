@@ -1,20 +1,39 @@
 // This is adapted from the MIT-licensed library @hotwired/turbo-rails.
 import { connectStreamSource, disconnectStreamSource } from '@hotwired/turbo';
-import { createConsumer, logger } from '@rails/actioncable';
+import { createConsumer } from '@anycable/web';
 import { getCSRFToken, setCSRFToken, fetchCSRFToken } from './csrf';
 
-let consumer;
+// Copied verbatim from the MIT-licensed absoluteWSUrl function at
+// https://github.com/anycable/anycable-client/blob/master/packages/web/index.js
+export const makeWebSocketURL = (path) => {
+  if (path.match(/wss?:\/\//)) return path;
+
+  if (typeof window !== 'undefined') {
+    let proto = window.location.protocol.replace('http', 'ws');
+
+    return `${proto}//${window.location.host}${path}`;
+  }
+
+  return path;
+};
+
+let consumers = {};
 
 function getConsumer(url) {
-  if (consumer === undefined) {
-    consumer = createConsumer(url === null ? undefined : url);
+  if (consumers[url] === undefined) {
+    consumers[url] = createConsumer(url === null ? undefined : url);
   }
-  return consumer;
+  return consumers[url];
 }
 
 export default class TurboCableStreamSourceElement extends HTMLElement {
   async connectedCallback() {
     connectStreamSource(this);
+    if (document.documentElement.hasAttribute('data-turbo-preview')) {
+      return;
+    }
+
+    // Ensure CSRF token
     if (this.hasValidCSRFToken()) {
       setCSRFToken(this.getAttribute('csrf-token'));
     } else if (
@@ -23,6 +42,8 @@ export default class TurboCableStreamSourceElement extends HTMLElement {
     ) {
       await this.addCSRFToken();
     }
+
+    // Initialize channel
     const channel = {
       channel: this.getAttribute('channel'),
       name: this.getAttribute('name'),
@@ -31,14 +52,12 @@ export default class TurboCableStreamSourceElement extends HTMLElement {
     if (this.hasAttribute('csrf-token')) {
       channel.csrfToken = this.getAttribute('csrf-token');
     }
-    this.subscription = getConsumer(
-      this.getAttribute('cable-route'),
-    ).subscriptions.create(channel, {
+
+    // Subscribe
+    const consumer = getConsumer(makeWebSocketURL(this.getAttribute('cable-route')));
+    this.subscription = consumer.subscriptions.create(channel, {
       received: this.dispatchMessageEvent.bind(this),
     });
-    if (this.hasAttribute('logging')) {
-      logger.enabled = true;
-    }
   }
 
   disconnectedCallback() {

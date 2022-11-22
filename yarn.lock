@@ -2,6 +2,20 @@
 # yarn lockfile v1
 
 
+"@anycable/core@^0.5.0":
+  version "0.5.7"
+  resolved "https://registry.yarnpkg.com/@anycable/core/-/core-0.5.7.tgz#815460c4d7ed4cb9ca5a96afa13303b5d8e8d3e6"
+  integrity sha512-CWdr4eMrR3j+VOrVR97lvPywX4tvc7PiW5z7hl1GxhtPMojE36LTid+BQyHvEpQS7eA201W+By8jYNoJ0KpmMw==
+  dependencies:
+    nanoevents "^6.0.0"
+
+"@anycable/web@^0.5.2":
+  version "0.5.2"
+  resolved "https://registry.yarnpkg.com/@anycable/web/-/web-0.5.2.tgz#bfdb0ae925bd6017052eca0f713ec06fa1fb5d63"
+  integrity sha512-GveeZMBGpeSF//BB7NAnV6BJUj0DCVO2ORTxr1cun3z7WSHdd0MG6NPICb6EOKrFDbar5YpTq2eRoADnSpXA8g==
+  dependencies:
+    "@anycable/core" "^0.5.0"
+
 "@eslint/eslintrc@^1.3.3":
   version "1.3.3"
   resolved "https://registry.yarnpkg.com/@eslint/eslintrc/-/eslintrc-1.3.3.tgz#2b044ab39fdfa75b4688184f9e573ce3c5b0ff95"
@@ -66,11 +80,6 @@
   dependencies:
     "@nodelib/fs.scandir" "2.1.5"
     fastq "^1.6.0"
-
-"@rails/actioncable@^7.0.3-1":
-  version "7.0.4"
-  resolved "https://registry.yarnpkg.com/@rails/actioncable/-/actioncable-7.0.4.tgz#70a3ca56809f7aaabb80af2f9c01ae51e1a8ed41"
-  integrity sha512-tz4oM+Zn9CYsvtyicsa/AwzKZKL+ITHWkhiu7x+xF77clh2b4Rm+s6xnOgY/sGDWoFWZmtKsE95hxBPkgQQNnQ==
 
 "@types/json5@^0.0.29":
   version "0.0.29"
@@ -797,6 +806,11 @@ ms@^2.1.1:
   version "2.1.3"
   resolved "https://registry.yarnpkg.com/ms/-/ms-2.1.3.tgz#574c8138ce1d2b5861f0b44579dbadd60c6615b2"
   integrity sha512-6FlzubTLZG3J2a/NVCAleEhjzq5oxgHyaCU9yYXvcLsvoVaHJq/s5xXI6/XXP6tz7R9xAOtHnSO/tXtF3WRTlA==
+
+nanoevents@^6.0.0:
+  version "6.0.2"
+  resolved "https://registry.yarnpkg.com/nanoevents/-/nanoevents-6.0.2.tgz#3824031c7beab754b04ae5a17936c0fc7b6a183c"
+  integrity sha512-FRS2otuFcPPYDPYViNWQ42+1iZqbXydinkRHTHFxrF4a1CpBfmydR9zkI44WSXAXCyPrkcGtPk5CnpW6Y3lFKQ==
 
 natural-compare@^1.4.0:
   version "1.4.0"

@@ -11,4 +11,7 @@ export { default as NavigationMenuController } from './navigation-menu.controlle
 export { default as ThemeController } from './theme.controller';
 export { Turbo } from './turbo';
 export { default as TurboCacheController } from './turbo-cache.controller';
-export { default as TurboCableStreamSourceElement } from './turbo-cable-stream-source.element';
+export {
+  default as TurboCableStreamSourceElement,
+  makeWebSocketURL,
+} from './turbo-cable-stream-source.element';
