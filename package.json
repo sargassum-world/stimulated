@@ -25,14 +25,14 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {
-    "eslint": "^8.27.0",
+    "eslint": "^8.28.0",
     "eslint-plugin-import": "^2.24.2",
-    "prettier": "^2.7.1"
+    "prettier": "^2.8.0"
   },
   "dependencies": {
     "@anycable/msgpack-encoder": "^0.2.0",
     "@anycable/web": "^0.5.2",
-    "@hotwired/stimulus": "3.1.1",
+    "@hotwired/stimulus": "3.2.0",
     "@hotwired/turbo": "^7.0.1",
     "async-mutex": "0.4.0"
   },
