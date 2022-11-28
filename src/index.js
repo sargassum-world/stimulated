@@ -1,4 +1,10 @@
-export { getCSRFToken, setCSRFToken, fetchCSRFToken } from './csrf';
+export { getActionCableConsumer, makeWebSocketURL } from './action-cable';
+export {
+  attachCSRFToken,
+  getCSRFToken,
+  setCSRFToken,
+  fetchCSRFToken,
+} from './csrf';
 export { default as CSRFController } from './csrf.controller';
 export { default as DefaultScrollableController } from './default-scrollable.controller';
 export { default as FormSubmissionController } from './form-submission.controller';
@@ -11,7 +17,4 @@ export { default as NavigationMenuController } from './navigation-menu.controlle
 export { default as ThemeController } from './theme.controller';
 export { Turbo } from './turbo';
 export { default as TurboCacheController } from './turbo-cache.controller';
-export {
-  default as TurboCableStreamSourceElement,
-  makeWebSocketURL,
-} from './turbo-cable-stream-source.element';
+export { default as TurboCableStreamSourceElement } from './turbo-cable-stream-source.element';
